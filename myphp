@@ -1,0 +1,66 @@
+<?php
+// Generate a random color
+$red = rand(0, 255);
+$green = rand(0, 255);
+$blue = rand(0, 255);
+
+// Convert RGB to a hex color code
+$randomColor = sprintf("#%02x%02x%02x", $red, $green, $blue);
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Color Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: <?= $randomColor ?>;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .color-box {
+            padding: 20px;
+            border-radius: 8px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        p {
+            margin: 10px 0 0;
+            font-size: 1.2em;
+        }
+        a {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: white;
+            color: <?= $randomColor ?>;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            background-color: <?= $randomColor ?>;
+            color: white;
+            border: 2px solid white;
+        }
+    </style>
+</head>
+<body>
+    <div class="color-box">
+        <h1>Random Color Generator</h1>
+        <p>Your random color is: <strong><?= $randomColor ?></strong></p>
+        <a href="javascript:location.reload()">Refresh for a New Color</a>
+    </div>
+</body>
+</html>
